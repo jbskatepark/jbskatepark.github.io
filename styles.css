@@ -2,7 +2,7 @@
   --ink: #121212;
   --paper: #f2efdf;
   --coral: #ff5f45;
-  --purple: #9b6cff;
+  --purple: #5b2fb3;
   --aqua: #62d7d0;
   --yellow: #f4e54a;
   --white: #fff;
@@ -34,6 +34,12 @@ a {
   color: inherit;
 }
 
+:focus-visible {
+  outline: 3px solid var(--white);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px var(--ink);
+}
+
 .skip-link {
   position: fixed;
   left: 12px;
@@ -46,6 +52,11 @@ a {
 
 .skip-link:focus {
   top: 12px;
+}
+
+.skip-link:focus-visible {
+  outline-color: var(--ink);
+  box-shadow: 0 0 0 6px var(--white);
 }
 
 .site-header {
