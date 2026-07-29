@@ -68,11 +68,12 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: min(calc(100% - 48px), var(--max));
+  width: 100%;
   margin: 0 auto;
-  padding: 28px 0;
+  padding: 28px max(24px, calc((100% - var(--max)) / 2));
   color: var(--white);
   border-bottom: 1px solid rgb(255 255 255 / 35%);
+  transition: background-color .35s ease, border-color .35s ease;
 }
 
 .wordmark {
@@ -562,8 +563,7 @@ footer {
 
 @media (max-width: 900px) {
   .site-header {
-    width: calc(100% - 32px);
-    padding: 18px 0;
+    padding: 18px 16px;
   }
 
   .menu-button {
@@ -654,6 +654,17 @@ footer {
   .gallery-wide {
     grid-column: 1 / -1;
     grid-row: auto;
+  }
+}
+
+@media (min-width: 901px) {
+  .site-header {
+    position: fixed;
+  }
+
+  .site-header.is-scrolled {
+    background: rgb(18 18 18 / 96%);
+    border-bottom-color: rgb(255 255 255 / 20%);
   }
 }
 
