@@ -532,14 +532,14 @@ h2 {
 
 .campaign-film {
   display: grid;
-  grid-template-columns: minmax(280px, .65fr) minmax(0, 1.35fr);
+  grid-template-columns: 1fr;
   gap: clamp(28px, 5vw, 72px);
   align-items: center;
 }
 
 .campaign-film h2 {
-  max-width: 520px;
-  font-size: clamp(3.4rem, 4vw, 4.8rem);
+  max-width: 1000px;
+  font-size: clamp(3.4rem, 5.2vw, 6rem);
 }
 
 .campaign-film-frame {
@@ -560,7 +560,7 @@ h2 {
 
 .park-film {
   display: grid;
-  grid-template-columns: minmax(360px, .8fr) minmax(0, 1.2fr);
+  grid-template-columns: 1fr;
   gap: clamp(42px, 7vw, 110px);
   align-items: center;
   color: var(--ink);
@@ -572,8 +572,8 @@ h2 {
 }
 
 .park-film-copy h2 {
-  max-width: 480px;
-  font-size: clamp(3.4rem, 4vw, 4.8rem);
+  max-width: 1000px;
+  font-size: clamp(3.4rem, 5.2vw, 6rem);
 }
 
 .park-film-copy > p:last-child {
@@ -674,13 +674,23 @@ h2 {
   display: grid;
   grid-template-columns: 1.2fr .8fr;
   grid-template-rows: repeat(2, minmax(240px, 360px));
-  gap: 14px;
-  margin-top: 70px;
+  gap: 28px;
+  margin: 70px 12px 12px 0;
 }
 
 .gallery figure {
   margin: 0;
   overflow: hidden;
+  border: 3px solid var(--white);
+  box-shadow: 10px 10px 0 var(--coral);
+}
+
+.gallery figure:nth-child(2) {
+  box-shadow: 10px 10px 0 var(--yellow);
+}
+
+.gallery figure:nth-child(3) {
+  box-shadow: 10px 10px 0 var(--aqua);
 }
 
 .gallery-wide {
@@ -771,7 +781,7 @@ footer {
   .campaign-film h2,
   .park-film-copy h2 {
     max-width: 900px;
-    font-size: clamp(3.4rem, 7vw, 6rem);
+    font-size: clamp(3.4rem, 5.2vw, 6rem);
   }
 }
 
@@ -1008,7 +1018,16 @@ footer {
 
   .gallery figure {
     height: 270px;
-    margin-bottom: 12px;
+    margin: 0 10px 22px 0;
+    box-shadow: 8px 8px 0 var(--coral);
+  }
+
+  .gallery figure:nth-child(2) {
+    box-shadow: 8px 8px 0 var(--yellow);
+  }
+
+  .gallery figure:nth-child(3) {
+    box-shadow: 8px 8px 0 var(--aqua);
   }
 
   footer {
