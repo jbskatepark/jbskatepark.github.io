@@ -305,51 +305,6 @@ h1 em {
   font-style: normal;
 }
 
-.park-film {
-  display: grid;
-  grid-template-columns: .8fr minmax(300px, 520px);
-  gap: clamp(50px, 9vw, 140px);
-  align-items: center;
-  color: var(--white);
-  background: var(--coral);
-}
-
-.park-film-copy > p:last-child {
-  max-width: 560px;
-  margin: 30px 0 0;
-  font-size: clamp(1.15rem, 2vw, 1.45rem);
-  font-weight: 700;
-}
-
-.park-film-media {
-  position: relative;
-  padding: 12px;
-  background: var(--yellow);
-  box-shadow: 16px 16px 0 var(--ink);
-  transform: rotate(2deg);
-}
-
-.park-video {
-  width: 100%;
-  aspect-ratio: 9 / 16;
-  object-fit: cover;
-}
-
-.video-toggle {
-  position: absolute;
-  right: 24px;
-  bottom: 24px;
-  padding: 11px 14px;
-  color: var(--white);
-  background: var(--ink);
-  border: 2px solid var(--white);
-  font: inherit;
-  font-size: .78rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-
 .section {
   padding: 120px max(24px, calc((100% - var(--max)) / 2));
 }
@@ -401,6 +356,94 @@ h2 {
   color: var(--aqua);
   font-family: "Archivo Black", sans-serif;
   font-size: 3rem;
+}
+
+.campaign-journey {
+  color: var(--ink);
+  background: var(--coral);
+}
+
+.journey-heading {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 90px;
+  align-items: end;
+}
+
+.journey-heading h2 {
+  max-width: 900px;
+}
+
+.journey-intro {
+  font-size: clamp(1.18rem, 2vw, 1.6rem);
+  font-weight: 600;
+}
+
+.journey-status {
+  margin-top: 24px;
+  font-family: "Archivo Black", sans-serif;
+  line-height: 1.2;
+}
+
+.campaign-timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  margin: 80px 0 0;
+  padding: 2px;
+  list-style: none;
+  background: var(--ink);
+}
+
+.campaign-timeline li {
+  padding: clamp(26px, 3vw, 40px);
+  background: var(--paper);
+}
+
+.timeline-year {
+  display: block;
+  margin-bottom: 42px;
+  color: var(--purple);
+  font-family: "Archivo Black", sans-serif;
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+}
+
+.campaign-timeline h3 {
+  margin: 0 0 18px;
+  font-size: 1.25rem;
+  line-height: 1.15;
+}
+
+.campaign-timeline p {
+  margin: 0;
+}
+
+.journey-callout {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 36px;
+  align-items: center;
+  padding: clamp(28px, 4vw, 48px);
+  color: var(--white);
+  background: var(--purple);
+}
+
+.journey-callout p {
+  max-width: 720px;
+  margin: 0;
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
+  font-weight: 700;
+}
+
+.journey-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.journey-button-outline {
+  color: var(--white);
+  border-color: var(--white);
 }
 
 .benefits h3 {
@@ -484,6 +527,40 @@ h2 {
 
 .fundraiser h2 {
   font-size: clamp(3.6rem, 6.6vw, 7rem);
+}
+
+.campaign-film {
+  display: grid;
+  grid-template-columns: minmax(240px, .65fr) minmax(0, 1.35fr);
+  grid-column: 1 / -1;
+  gap: clamp(28px, 5vw, 72px);
+  align-items: center;
+  margin-top: clamp(16px, 3vw, 42px);
+  padding-top: clamp(36px, 5vw, 72px);
+  border-top: 1px solid rgb(255 255 255 / 40%);
+}
+
+.campaign-film h3 {
+  max-width: 520px;
+  margin: 14px 0 0;
+  font-size: clamp(2.15rem, 4vw, 4.5rem);
+  line-height: .98;
+}
+
+.campaign-film-frame {
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 3px solid var(--ink);
+  background: var(--ink);
+  box-shadow: 12px 12px 0 var(--yellow);
+}
+
+.campaign-film-frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 .event-lead {
@@ -576,6 +653,12 @@ h2 {
   margin: 0 0 32px;
   font-size: clamp(1.25rem, 2.2vw, 1.75rem);
   font-weight: 700;
+}
+
+.support-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 footer {
@@ -675,9 +758,18 @@ footer {
 
   .section-grid,
   .section-heading,
+  .journey-heading,
   .support {
     grid-template-columns: 1fr;
     gap: 42px;
+  }
+
+  .campaign-timeline {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .journey-callout {
+    grid-template-columns: 1fr;
   }
 
   .benefits {
@@ -697,9 +789,8 @@ footer {
     justify-content: center;
   }
 
-  .park-film {
-    grid-template-columns: minmax(240px, 480px);
-    justify-content: center;
+  .campaign-film {
+    grid-template-columns: 1fr;
   }
 
   .gallery {
@@ -786,12 +877,30 @@ footer {
     box-shadow: 9px 9px 0 var(--ink);
   }
 
-  .park-film-media {
-    box-shadow: 9px 9px 0 var(--ink);
+  .campaign-film-frame {
+    box-shadow: 7px 7px 0 var(--yellow);
   }
 
   .event-details div {
     grid-template-columns: 78px 1fr;
+  }
+
+  .campaign-timeline {
+    grid-template-columns: 1fr;
+    margin-top: 50px;
+  }
+
+  .timeline-year {
+    margin-bottom: 22px;
+  }
+
+  .journey-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .journey-actions .button {
+    text-align: center;
   }
 
   .gallery {
