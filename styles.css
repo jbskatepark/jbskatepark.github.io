@@ -323,7 +323,7 @@ h1 em {
 }
 
 h2 {
-  font-size: clamp(3.4rem, 7vw, 7.2rem);
+  font-size: clamp(3.4rem, 5.2vw, 6rem);
 }
 
 .large-copy {
@@ -525,30 +525,21 @@ h2 {
   width: 100%;
 }
 
-.fundraiser h2 {
-  font-size: clamp(3.6rem, 6.6vw, 7rem);
+.campaign-film-section {
+  color: var(--ink);
+  background: var(--paper);
 }
 
 .campaign-film {
   display: grid;
-  grid-template-columns: minmax(240px, .65fr) minmax(0, 1.35fr);
-  grid-column: 1 / -1;
+  grid-template-columns: minmax(280px, .65fr) minmax(0, 1.35fr);
   gap: clamp(28px, 5vw, 72px);
   align-items: center;
-  margin-top: clamp(16px, 3vw, 42px);
-  padding-top: clamp(36px, 5vw, 72px);
-  border-top: 1px solid rgb(255 255 255 / 40%);
 }
 
-.campaign-film h3 {
+.campaign-film h2 {
   max-width: 520px;
-  margin: 14px 0 0;
-  font-family: "Archivo Black", sans-serif;
-  font-weight: 400;
-  font-size: clamp(2.15rem, 4vw, 4.5rem);
-  line-height: .98;
-  letter-spacing: -.055em;
-  text-transform: uppercase;
+  font-size: clamp(3.4rem, 4vw, 4.8rem);
 }
 
 .campaign-film-frame {
@@ -569,21 +560,26 @@ h2 {
 
 .park-film {
   display: grid;
-  grid-template-columns: minmax(250px, .62fr) minmax(0, 1.38fr);
+  grid-template-columns: minmax(360px, .8fr) minmax(0, 1.2fr);
   gap: clamp(42px, 7vw, 110px);
   align-items: center;
-  color: var(--white);
-  background: var(--ink);
+  color: var(--ink);
+  background: var(--aqua);
+}
+
+.park-film-copy {
+  min-width: 0;
 }
 
 .park-film-copy h2 {
-  font-size: clamp(3.5rem, 6.5vw, 6.8rem);
+  max-width: 480px;
+  font-size: clamp(3.4rem, 4vw, 4.8rem);
 }
 
 .park-film-copy > p:last-child {
   max-width: 520px;
   margin: 30px 0 0;
-  color: rgb(255 255 255 / 72%);
+  color: rgb(18 18 18 / 76%);
   font-size: clamp(1.05rem, 1.7vw, 1.3rem);
   font-weight: 600;
 }
@@ -595,7 +591,7 @@ h2 {
   aspect-ratio: 16 / 9;
   border: 3px solid var(--white);
   background: #080808;
-  box-shadow: 14px 14px 0 var(--aqua);
+  box-shadow: 14px 14px 0 var(--purple);
 }
 
 .park-video {
@@ -758,6 +754,25 @@ footer {
   color: rgb(255 255 255 / 55%);
   border-top: 1px solid rgb(255 255 255 / 20%);
   font-size: .8rem;
+}
+
+@media (max-width: 1100px) {
+  .campaign-film,
+  .park-film {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .campaign-film-heading,
+  .park-film-copy {
+    max-width: 720px;
+  }
+
+  .campaign-film h2,
+  .park-film-copy h2 {
+    max-width: 900px;
+    font-size: clamp(3.4rem, 7vw, 6rem);
+  }
 }
 
 @media (max-width: 900px) {
@@ -952,9 +967,10 @@ footer {
   }
 
   .park-film-media {
-    box-shadow: 8px 8px 0 var(--aqua);
+    box-shadow: 8px 8px 0 var(--purple);
   }
 
+  .campaign-film h2,
   .park-film-copy h2 {
     font-size: clamp(3rem, 14vw, 4.6rem);
   }
